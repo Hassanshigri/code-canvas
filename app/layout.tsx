@@ -1,13 +1,12 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import React from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Hello World Next.js App',
-  description: 'A simple Next.js app that says Hello World',
+  title: 'Code Canvas - Turn Sketches into Code',
+  description: 'Code Canvas transforms your sketches, text, and color palettes into beautiful HTML and CSS code.',
 }
 
 export default function RootLayout({
