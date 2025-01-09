@@ -5,19 +5,11 @@ import { PencilIcon, TypeIcon, PaletteIcon, CodeIcon } from 'lucide-react';
 import { motion } from "framer-motion";
 import { StickyHeader } from "./components/StickyHeader";
 import { Button } from "./components/ui/button";
+import { AnimatedSection } from "./components/AnimatedSection";
 
-const fadeIn = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
-};
-
-const staggerChildren = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
 
 export default function Home() {
@@ -26,27 +18,22 @@ export default function Home() {
       <StickyHeader />
 
       <main className="flex-1">
-        <motion.section 
-          initial="initial"
-          animate="animate"
-          variants={staggerChildren}
-          className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500"
-        >
+        <AnimatedSection className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center text-white">
               <motion.h1 
-                variants={fadeIn}
+                variants={fadeInUp}
                 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl"
               >
                 Turn Your Sketches into Code
               </motion.h1>
               <motion.p 
-                variants={fadeIn}
+                variants={fadeInUp}
                 className="mx-auto max-w-[700px] text-xl md:text-2xl"
               >
                 Code Canvas transforms your sketches, text, and color palettes into beautiful HTML and CSS code.
               </motion.p>
-              <motion.div variants={fadeIn} className="space-x-4">
+              <motion.div variants={fadeInUp} className="space-x-4">
                 <Button
                   asChild
                   size="lg"
@@ -64,18 +51,12 @@ export default function Home() {
               </motion.div>
             </div>
           </div>
-        </motion.section>
+        </AnimatedSection>
 
-        <motion.section 
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          variants={staggerChildren}
-          className="py-16 bg-gray-800"
-        >
+        <AnimatedSection className="py-16 bg-gray-800">
           <div className="container px-4 md:px-6">
             <motion.h2 
-              variants={fadeIn}
+              variants={fadeInUp}
               className="mb-12 text-3xl font-bold tracking-tighter text-center text-white sm:text-5xl"
             >
               Features
@@ -105,7 +86,7 @@ export default function Home() {
               ].map((feature, index) => (
                 <motion.div
                   key={index}
-                  variants={fadeIn}
+                  variants={fadeInUp}
                   className="flex flex-col items-center p-4 space-y-2 bg-gray-700 border rounded-lg"
                 >
                   {feature.icon}
@@ -115,19 +96,12 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </motion.section>
+        </AnimatedSection>
 
-        <motion.section
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          variants={staggerChildren}
-          id="how-it-works"
-          className="w-full py-12 bg-gray-100 md:py-24 lg:py-32"
-        >
+        <AnimatedSection className="w-full py-12 bg-gray-100 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <motion.h2 
-              variants={fadeIn}
+              variants={fadeInUp}
               className="mb-12 text-3xl font-bold tracking-tighter text-center text-black sm:text-5xl"
             >
               How It Works
@@ -150,7 +124,7 @@ export default function Home() {
                   description: "Receive clean, responsive HTML and CSS code ready to use."
                 },
               ].map((step, index) => (
-                <motion.div key={index} variants={fadeIn} className="flex flex-col items-center space-y-2">
+                <motion.div key={index} variants={fadeInUp} className="flex flex-col items-center space-y-2">
                   <div className="flex items-center justify-center w-12 h-12 text-xl font-bold text-white bg-purple-500 rounded-full">
                     {step.step}
                   </div>
@@ -160,30 +134,24 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </motion.section>
+        </AnimatedSection>
 
-        <motion.section 
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          variants={staggerChildren}
-          className="w-full py-12 bg-gray-800 md:py-24 lg:py-32"
-        >
+        <AnimatedSection className="w-full py-12 bg-gray-800 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
               <motion.h2 
-                variants={fadeIn}
+                variants={fadeInUp}
                 className="text-3xl font-bold tracking-tighter text-white sm:text-5xl"
               >
                 Ready to Transform Your Designs?
               </motion.h2>
               <motion.p 
-                variants={fadeIn}
+                variants={fadeInUp}
                 className="mx-auto max-w-[600px] text-gray-300 md:text-xl lg:text-base xl:text-xl"
               >
                 Join Code Canvas today and start turning your creative ideas into functional, beautiful code.
               </motion.p>
-              <motion.div variants={fadeIn}>
+              <motion.div variants={fadeInUp}>
                 <Button
                   asChild
                   size="lg"
@@ -194,7 +162,7 @@ export default function Home() {
               </motion.div>
             </div>
           </div>
-        </motion.section>
+        </AnimatedSection>
       </main>
 
       <footer className="flex flex-col items-center w-full gap-2 px-4 py-6 bg-gray-800 border-t border-gray-700 sm:flex-row shrink-0 md:px-6">
@@ -220,3 +188,4 @@ export default function Home() {
     </div>
   );
 }
+
