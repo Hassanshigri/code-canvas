@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { StickyHeader } from "../components/StickyHeader";
 import { Button } from "../components/ui/button";
 import { AnimatedSection } from "../components/AnimatedSection";
 
@@ -14,14 +13,13 @@ const fadeInUp = {
 export default function GetStarted() {
   return (
     <div className="flex flex-col min-h-screen">
-      <StickyHeader />
-      <main className="flex-1 container mx-auto px-4 py-8">
+      <main className="container flex-1 px-4 py-8 mx-auto">
         <AnimatedSection className="space-y-8">
-          <motion.h1 variants={fadeInUp} className="text-4xl font-bold mb-6">Get Started with Code Canvas</motion.h1>
-          <motion.p variants={fadeInUp} className="text-xl mb-8">
+          <motion.h1 variants={fadeInUp} className="mb-6 text-4xl font-bold">Get Started with Code Canvas</motion.h1>
+          <motion.p variants={fadeInUp} className="mb-8 text-xl">
             Welcome to Code Canvas! Follow these steps to begin transforming your designs into code.
           </motion.p>
-          <motion.ol variants={fadeInUp} className="list-decimal list-inside space-y-4 mb-8">
+          <motion.ol variants={fadeInUp} className="mb-8 space-y-4 list-decimal list-inside">
             {[
               "Create an account or sign in",
               "Upload your sketch or describe your design",
@@ -39,7 +37,7 @@ export default function GetStarted() {
           </motion.div>
         </AnimatedSection>
       </main>
-      <footer className="w-full py-6 bg-gray-800 text-white text-center">
+      <footer className="w-full py-6 text-center text-white bg-gray-800">
         <p className="text-sm">© 2023 Code Canvas. All rights reserved.</p>
       </footer>
     </div>
