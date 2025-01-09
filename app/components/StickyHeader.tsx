@@ -26,7 +26,7 @@ export function StickyHeader() {
       transition={{ duration: 0.3 }}
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm"
     >
-      <div className="container flex items-center justify-between px-4 py-4 mx-auto lg:px-6">
+      <div className="container mx-auto flex items-center justify-between px-4 lg:px-6 py-4">
         <Link className="flex items-center justify-center" href="/">
           <Image src="/placeholder.svg?height=32&width=32" alt="Code Canvas Logo" width={32} height={32} />
           <span className="ml-2 text-2xl font-bold">Code Canvas</span>
