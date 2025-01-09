@@ -5,7 +5,7 @@ import { PencilIcon, TypeIcon, PaletteIcon, CodeIcon } from 'lucide-react'
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen">npm 
       <header className="px-4 lg:px-6 h-16 flex items-center">
         <Link className="flex items-center justify-center" href="#">
           <Image src="/placeholder.svg?height=32&width=32" alt="Code Canvas Logo" width={32} height={32} />
