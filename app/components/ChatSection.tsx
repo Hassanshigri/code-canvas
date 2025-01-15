@@ -33,7 +33,7 @@ export const ChatSection = ({ selectedChat }: ChatSectionProps) => {
           <div className="space-y-4">
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <h3 className="text-xl font-bold">Chat with {selectedChat.name}</h3>
+                <h3 className="text-xl font-bold text-black">Chat with {selectedChat.name}</h3>
               </div>
               <div className="p-4 bg-white border rounded-lg">
                 <div className="space-y-4">
