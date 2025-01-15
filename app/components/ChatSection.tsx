@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from "react"
-import { Button } from "../components/ui/button"
+import { Button } from "./ui/button"
 
 interface ChatSectionProps {
   selectedChat: any
@@ -16,7 +16,6 @@ export const ChatSection = ({ selectedChat }: ChatSectionProps) => {
     if (prompt) {
       setMessages([...messages, { type: "user", text: prompt }])
       setPrompt("")
-      // Here you can handle sending the prompt to the backend or API
     }
   }
 
@@ -24,12 +23,11 @@ export const ChatSection = ({ selectedChat }: ChatSectionProps) => {
     const file = event.target.files?.[0]
     if (file) {
       setImage(file)
-      // Handle image upload logic here
     }
   }
 
   return (
-    <div>
+    <div className="flex-1 p-4 overflow-y-auto bg-gray-100">
       {selectedChat ? (
         <>
           <div className="space-y-4">
@@ -37,7 +35,7 @@ export const ChatSection = ({ selectedChat }: ChatSectionProps) => {
               <div className="flex items-center justify-between">
                 <h3 className="text-xl font-bold">Chat with {selectedChat.name}</h3>
               </div>
-              <div className="p-4 bg-gray-100 border rounded-lg">
+              <div className="p-4 bg-white border rounded-lg">
                 <div className="space-y-4">
                   {messages.map((msg, index) => (
                     <div key={index} className={`text-${msg.type === "user" ? "right" : "left"}`}>
@@ -51,7 +49,7 @@ export const ChatSection = ({ selectedChat }: ChatSectionProps) => {
             </div>
 
             {/* Prompt and Image Upload */}
-            <div className="space-y-4">
+            <div className="mt-4 space-y-4">
               <div className="flex items-center">
                 <input
                   type="text"
