@@ -19,7 +19,7 @@ export const Sidebar = ({ selectedChat, setSelectedChat }: SidebarProps) => {
   }
 
   return (
-    <div>
+    <div className="w-full p-4 text-white bg-gray-800 sm:w-1/3 lg:w-1/4 xl:w-1/5">
       <h2 className="mb-4 text-xl font-bold">Chats</h2>
       <ul className="space-y-2">
         {chats.map((chat) => (
